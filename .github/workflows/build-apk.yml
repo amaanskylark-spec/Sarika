@@ -47,11 +47,27 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      - name: Fix Kotlin duplicate class conflict
+        run: |
+          cat >> android/build.gradle << 'EOF'
+
+          subprojects {
+              configurations.all {
+                  resolutionStrategy {
+                      force "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+                      force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
+                      force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
+                      force "org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22"
+                  }
+              }
+          }
+          EOF
+
       - name: Build debug APK
         working-directory: android
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew clean assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
