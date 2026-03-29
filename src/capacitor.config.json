@@ -4,7 +4,7 @@
   "webDir": "dist",
   "server": {
     "androidScheme": "https",
-    "url": "https://app.base44.com/apps/69c8019acf14625ad4e734a8",
+    "url": "https://ubiquitous-sync-ledger-flow.base44.app",
     "cleartext": true
   },
   "plugins": {
