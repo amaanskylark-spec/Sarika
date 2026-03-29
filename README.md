@@ -39,3 +39,19 @@ Open [db.com](http://db.com) and click on Publish.
 Documentation: [https://docs.db.com/Integrations/Using-GitHub](https://docs.db.com/Integrations/Using-GitHub)
 
 Support: [https://app.db.com/support](https://app.db.com/support)
+
+## Build APK in GitHub Actions
+
+If your workflow fails on `actions/setup-java@v4` with:
+
+`No file ... matched to [**/*.gradle* ...]`
+
+it means the Android Gradle files do not exist yet in the repository checkout. This project creates Android files during CI using Capacitor (`npx cap add android`), then configures Java and runs Gradle.
+
+Use `.github/workflows/build-apk.yml` to:
+
+1. Build the Vite web app.
+2. Generate/sync Capacitor Android project.
+3. Set up **JDK 11**.
+4. Run `./gradlew assembleDebug`.
+5. Upload `app-debug.apk` as a workflow artifact.
