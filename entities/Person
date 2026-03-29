@@ -1,0 +1,50 @@
+{
+  "name": "Person",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Person's name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number (optional)"
+    },
+    "initial_balance": {
+      "type": "number",
+      "default": 0,
+      "description": "Initial balance amount"
+    },
+    "current_balance": {
+      "type": "number",
+      "default": 0,
+      "description": "Current calculated balance"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about this person"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "settled"
+      ],
+      "default": "pending",
+      "description": "Account status"
+    },
+    "ledger_id": {
+      "type": "string",
+      "description": "ID of the ledger this person belongs to"
+    },
+    "last_transaction_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of the last transaction"
+    }
+  },
+  "required": [
+    "name",
+    "ledger_id"
+  ]
+}

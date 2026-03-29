@@ -1,0 +1,34 @@
+{
+  "name": "Ledger",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the shared ledger"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the ledger"
+    },
+    "members": {
+      "type": "array",
+      "description": "List of member emails who can access this ledger",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "Email of the ledger creator"
+    },
+    "currency_symbol": {
+      "type": "string",
+      "default": "\u20b9",
+      "description": "Currency symbol used in this ledger"
+    }
+  },
+  "required": [
+    "name",
+    "owner_email"
+  ]
+}

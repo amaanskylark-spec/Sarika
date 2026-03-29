@@ -1,0 +1,40 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "ledger_id": {
+      "type": "string",
+      "description": "ID of the ledger"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name of the user who performed the action"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "action": {
+      "type": "string",
+      "description": "Description of the action performed"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "transaction_added",
+        "transaction_edited",
+        "transaction_deleted",
+        "person_added",
+        "person_edited",
+        "comment_added",
+        "member_added"
+      ],
+      "description": "Type of action"
+    }
+  },
+  "required": [
+    "ledger_id",
+    "action",
+    "action_type"
+  ]
+}

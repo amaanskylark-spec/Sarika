@@ -1,0 +1,50 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "person_id": {
+      "type": "string",
+      "description": "ID of the person this transaction is for"
+    },
+    "ledger_id": {
+      "type": "string",
+      "description": "ID of the ledger"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Transaction amount"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "given",
+        "received"
+      ],
+      "description": "Transaction type - money given or received"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Transaction date"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Comment or note about this transaction"
+    },
+    "added_by_name": {
+      "type": "string",
+      "description": "Name of user who added this transaction"
+    },
+    "added_by_email": {
+      "type": "string",
+      "description": "Email of user who added this transaction"
+    }
+  },
+  "required": [
+    "person_id",
+    "ledger_id",
+    "amount",
+    "type",
+    "date"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "DeletedEntry",
+  "type": "object",
+  "properties": {
+    "entry_type": {
+      "type": "string",
+      "enum": [
+        "person",
+        "transaction"
+      ],
+      "description": "Type of deleted entry"
+    },
+    "entry_id": {
+      "type": "string",
+      "description": "Original ID of the deleted entry"
+    },
+    "entry_data": {
+      "type": "string",
+      "description": "JSON stringified data of the deleted entry"
+    },
+    "deleted_by": {
+      "type": "string",
+      "description": "Username who deleted this entry"
+    },
+    "ledger_id": {
+      "type": "string",
+      "description": "Ledger ID this entry belonged to"
+    },
+    "person_name": {
+      "type": "string",
+      "description": "Name of the person (for display)"
+    }
+  },
+  "required": [
+    "entry_type",
+    "entry_data",
+    "ledger_id"
+  ]
+}

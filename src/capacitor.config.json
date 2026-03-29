@@ -1,0 +1,15 @@
+{
+  "appId": "com.sarkia.tracker",
+  "appName": "Sarkia Tracker",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#f5f7fa",
+      "showSpinner": false
+    }
+  }
+}
